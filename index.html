@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spice Garden Restaurant</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background: #fffaf5;
+      color: #222;
+    }
+
+    header {
+      background: #1f1f1f;
+      color: white;
+      padding: 18px 6%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h2 {
+      color: #f5b041;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 18px;
+    }
+
+    .hero {
+      min-height: 70vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px 20px;
+      background: linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.55)),
+        url("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1400&q=80")
+        center/cover;
+      color: white;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      margin-bottom: 12px;
+    }
+
+    .hero p {
+      font-size: 20px;
+      margin-bottom: 25px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 24px;
+      background: #f5b041;
+      color: #111;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+    }
+
+    section {
+      padding: 55px 8%;
+      text-align: center;
+    }
+
+    section h2 {
+      margin-bottom: 25px;
+      font-size: 32px;
+    }
+
+    .menu {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .item {
+      background: white;
+      padding: 22px;
+      border-radius: 10px;
+      box-shadow: 0 3px 12px rgba(0,0,0,.08);
+    }
+
+    .item h3 {
+      margin-bottom: 8px;
+    }
+
+    .price {
+      font-weight: bold;
+      margin-top: 10px;
+      color: #d35400;
+    }
+
+    footer {
+      background: #1f1f1f;
+      color: white;
+      text-align: center;
+      padding: 25px;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .hero h1 {
+        font-size: 36px;
+      }
+
+      nav a {
+        margin: 0 6px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h2>Spice Garden</h2>
+
+    <nav>
+      <a href="#about">About</a>
+      <a href="#menu">Menu</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div>
+      <h1>Spice Garden Restaurant</h1>
+      <p>Fresh food. Great taste. Warm memories.</p>
+      <a class="btn" href="#menu">View Menu</a>
+    </div>
+  </section>
+
+  <section id="about">
+    <h2>About Us</h2>
+    <p>
+      Welcome to Spice Garden. We serve delicious food made with fresh
+      ingredients and traditional flavors.
+    </p>
+  </section>
+
+  <section id="menu">
+    <h2>Our Menu</h2>
+
+    <div class="menu">
+
+      <div class="item">
+        <h3>Butter Chicken</h3>
+        <p>Creamy and flavorful chicken.</p>
+        <div class="price">₹299</div>
+      </div>
+
+      <div class="item">
+        <h3>Paneer Tikka</h3>
+        <p>Grilled paneer with spices.</p>
+        <div class="price">₹249</div>
+      </div>
+
+      <div class="item">
+        <h3>Veg Biryani</h3>
+        <p>Fragrant rice with fresh vegetables.</p>
+        <div class="price">₹199</div>
+      </div>
+
+      <div class="item">
+        <h3>Masala Dosa</h3>
+        <p>Crispy dosa with potato masala.</p>
+        <div class="price">₹129</div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Visit Us</h2>
+    <p>123 Main Street, Bengaluru</p>
+    <p>Phone: +91 98765 43210</p>
+    <br>
+    <a class="btn" href="https://wa.me/919876543210">WhatsApp Us</a>
+  </section>
+
+  <footer>
+    <p>© 2026 Spice Garden Restaurant</. bbbbbhb p>
+  </footer>
+
+</body>
+</html>
