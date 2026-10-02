@@ -3,112 +3,215 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Spice Garden Restaurant</title>
+
+  <title>Spice Garden | Restaurant</title>
 
   <style>
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
     }
 
     body {
       font-family: Arial, sans-serif;
-      line-height: 1.6;
-      background: #fffaf5;
       color: #222;
+      background: #fffaf4;
+      line-height: 1.6;
     }
 
     header {
-      background: #1f1f1f;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: #171717;
       color: white;
-      padding: 18px 6%;
+      padding: 16px 7%;
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
 
-    header h2 {
-      color: #f5b041;
+    .logo {
+      font-size: 22px;
+      font-weight: bold;
+      color: #f6b73c;
     }
 
     nav a {
       color: white;
       text-decoration: none;
-      margin-left: 18px;
+      margin-left: 20px;
+      font-size: 14px;
+    }
+
+    nav a:hover {
+      color: #f6b73c;
     }
 
     .hero {
-      min-height: 70vh;
+      min-height: 78vh;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding: 40px 20px;
-      background: linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.55)),
-        url("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1400&q=80")
-        center/cover;
       color: white;
+      padding: 30px 20px;
+
+      background:
+        linear-gradient(rgba(0,0,0,.58), rgba(0,0,0,.58)),
+        url("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1600&q=80")
+        center/cover;
+    }
+
+    .hero-content {
+      max-width: 700px;
     }
 
     .hero h1 {
-      font-size: 48px;
+      font-size: clamp(38px, 7vw, 68px);
       margin-bottom: 12px;
     }
 
     .hero p {
-      font-size: 20px;
-      margin-bottom: 25px;
+      font-size: 19px;
+      margin-bottom: 28px;
     }
 
     .btn {
       display: inline-block;
-      padding: 12px 24px;
-      background: #f5b041;
-      color: #111;
-      text-decoration: none;
+      background: #f6b73c;
+      color: #171717;
+      padding: 13px 24px;
       border-radius: 6px;
+      text-decoration: none;
       font-weight: bold;
+      margin: 5px;
+    }
+
+    .btn.dark {
+      background: white;
     }
 
     section {
-      padding: 55px 8%;
+      padding: 70px 7%;
       text-align: center;
     }
 
-    section h2 {
-      margin-bottom: 25px;
-      font-size: 32px;
+    .section-title {
+      font-size: 34px;
+      margin-bottom: 12px;
+    }
+
+    .section-subtitle {
+      color: #777;
+      max-width: 650px;
+      margin: 0 auto 35px;
+    }
+
+    .about {
+      max-width: 850px;
+      margin: auto;
     }
 
     .menu {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
+      gap: 22px;
+      max-width: 1000px;
+      margin: auto;
     }
 
-    .item {
+    .menu-card {
       background: white;
-      padding: 22px;
-      border-radius: 10px;
-      box-shadow: 0 3px 12px rgba(0,0,0,.08);
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 5px 20px rgba(0,0,0,.08);
+      text-align: left;
     }
 
-    .item h3 {
+    .menu-card h3 {
       margin-bottom: 8px;
     }
 
+    .menu-card p {
+      color: #777;
+      font-size: 14px;
+    }
+
     .price {
+      color: #d77a00;
       font-weight: bold;
-      margin-top: 10px;
-      color: #d35400;
+      margin-top: 12px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 15px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 230px;
+      object-fit: cover;
+      border-radius: 12px;
+    }
+
+    .reviews {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .review {
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 5px 18px rgba(0,0,0,.07);
+    }
+
+    .review p {
+      color: #666;
+      font-style: italic;
+    }
+
+    .review strong {
+      display: block;
+      margin-top: 15px;
+    }
+
+    .contact-box {
+      max-width: 700px;
+      margin: auto;
+      background: white;
+      padding: 35px;
+      border-radius: 14px;
+      box-shadow: 0 5px 20px rgba(0,0,0,.08);
+    }
+
+    .hours {
+      margin: 20px 0;
+    }
+
+    .hours p {
+      margin: 5px;
     }
 
     footer {
-      background: #1f1f1f;
+      background: #171717;
       color: white;
       text-align: center;
-      padding: 25px;
+      padding: 28px 15px;
+    }
+
+    footer span {
+      color: #f6b73c;
     }
 
     @media (max-width: 600px) {
@@ -117,12 +220,21 @@
         gap: 10px;
       }
 
-      .hero h1 {
-        font-size: 36px;
-      }
-
       nav a {
         margin: 0 6px;
+        font-size: 13px;
+      }
+
+      .hero {
+        min-height: 72vh;
+      }
+
+      section {
+        padding: 55px 5%;
+      }
+
+      .section-title {
+        font-size: 29px;
       }
     }
   </style>
@@ -130,75 +242,193 @@
 
 <body>
 
-  <header>
-    <h2>Spice Garden</h2>
+<header>
+  <div class="logo">Spice Garden</div>
 
-    <nav>
-      <a href="#about">About</a>
-      <a href="#menu">Menu</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#menu">Menu</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
 
-  <section class="hero">
-    <div>
-      <h1>Spice Garden Restaurant</h1>
-      <p>Fresh food. Great taste. Warm memories.</p>
-      <a class="btn" href="#menu">View Menu</a>
-    </div>
-  </section>
 
-  <section id="about">
-    <h2>About Us</h2>
+<section class="hero">
+  <div class="hero-content">
+
+    <h1>Spice Garden</h1>
+
     <p>
-      Welcome to Spice Garden. We serve delicious food made with fresh
-      ingredients and traditional flavors.
+      Authentic flavors, fresh ingredients and memorable dining.
     </p>
-  </section>
 
-  <section id="menu">
-    <h2>Our Menu</h2>
+    <a class="btn" href="#menu">Explore Menu</a>
 
-    <div class="menu">
+    <a class="btn dark" href="#contact">Book a Table</a>
 
-      <div class="item">
-        <h3>Butter Chicken</h3>
-        <p>Creamy and flavorful chicken.</p>
-        <div class="price">₹299</div>
-      </div>
+  </div>
+</section>
 
-      <div class="item">
-        <h3>Paneer Tikka</h3>
-        <p>Grilled paneer with spices.</p>
-        <div class="price">₹249</div>
-      </div>
 
-      <div class="item">
-        <h3>Veg Biryani</h3>
-        <p>Fragrant rice with fresh vegetables.</p>
-        <div class="price">₹199</div>
-      </div>
+<section id="about">
 
-      <div class="item">
-        <h3>Masala Dosa</h3>
-        <p>Crispy dosa with potato masala.</p>
-        <div class="price">₹129</div>
-      </div>
+  <h2 class="section-title">About Us</h2>
+
+  <p class="section-subtitle">
+    A warm place for great food, family moments and unforgettable flavors.
+  </p>
+
+  <div class="about">
+    <p>
+      Welcome to Spice Garden. We prepare delicious dishes using
+      fresh ingredients and carefully selected spices. Whether you're
+      joining us for a family dinner, lunch with friends or a special
+      occasion, we are happy to serve you.
+    </p>
+  </div>
+
+</section>
+
+
+<section id="menu">
+
+  <h2 class="section-title">Our Menu</h2>
+
+  <p class="section-subtitle">
+    Some of our customer favorites.
+  </p>
+
+  <div class="menu">
+
+    <div class="menu-card">
+      <h3>Butter Chicken</h3>
+      <p>Creamy, rich and full of traditional flavor.</p>
+      <div class="price">₹299</div>
+    </div>
+
+    <div class="menu-card">
+      <h3>Paneer Tikka</h3>
+      <p>Grilled paneer marinated with aromatic spices.</p>
+      <div class="price">₹249</div>
+    </div>
+
+    <div class="menu-card">
+      <h3>Veg Biryani</h3>
+      <p>Fragrant basmati rice with fresh vegetables.</p>
+      <div class="price">₹199</div>
+    </div>
+
+    <div class="menu-card">
+      <h3>Masala Dosa</h3>
+      <p>Crispy dosa served with flavorful potato masala.</p>
+      <div class="price">₹129</div>
+    </div>
+
+  </div>
+
+</section>
+
+
+<section id="gallery">
+
+  <h2 class="section-title">Food & Ambience</h2>
+
+  <p class="section-subtitle">
+    A glimpse of the Spice Garden experience.
+  </p>
+
+  <div class="gallery">
+
+    <img src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=800&q=80">
+
+    <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=800&q=80">
+
+    <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=800&q=80">
+
+    <img src="https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=800&q=80">
+
+  </div>
+
+</section>
+
+
+<section id="reviews">
+
+  <h2 class="section-title">What Our Guests Say</h2>
+
+  <p class="section-subtitle">
+    Customer experiences that make us happy.
+  </p>
+
+  <div class="reviews">
+
+    <div class="review">
+      <p>
+        “Great food and a lovely atmosphere. Definitely coming back!”
+      </p>
+      <strong>— Sarah</strong>
+    </div>
+
+    <div class="review">
+      <p>
+        “The food was fresh, delicious and beautifully presented.”
+      </p>
+      <strong>— Michael</strong>
+    </div>
+
+    <div class="review">
+      <p>
+        “Perfect place for dinner with family and friends.”
+      </p>
+      <strong>— David</strong>
+    </div>
+
+  </div>
+
+</section>
+
+
+<section id="contact">
+
+  <h2 class="section-title">Visit Us</h2>
+
+  <div class="contact-box">
+
+    <p>📍 123 Main Street, Bengaluru</p>
+
+    <p>📞 +91 98765 43210</p>
+
+    <div class="hours">
+
+      <h3>Opening Hours</h3>
+
+      <p>Monday – Friday: 11:00 AM – 10:00 PM</p>
+      <p>Saturday – Sunday: 10:00 AM – 11:00 PM</p>
 
     </div>
-  </section>
 
-  <section id="contact">
-    <h2>Visit Us</h2>
-    <p>123 Main Street, Bengaluru</p>
-    <p>Phone: +91 98765 43210</p>
-    <br>
-    <a class="btn" href="https://wa.me/919876543210">WhatsApp Us</a>
-  </section>
+    <a class="btn" href="tel:+919876543210">
+      Call Now
+    </a>
 
-  <footer>
-    <p>© 2026 Spice Garden Restaurant</. bbbbbhb p>
-  </footer>
+    <a class="btn" href="https://wa.me/919876543210">
+      WhatsApp
+    </a>
+
+  </div>
+
+</section>
+
+
+<footer>
+
+  <p>
+    © 2026 <span>Spice Garden</span>. All Rights Reserved.
+  </p>
+
+</footer>
 
 </body>
-</html>
+</html> 
